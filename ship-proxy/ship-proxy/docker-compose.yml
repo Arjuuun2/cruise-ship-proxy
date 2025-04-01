@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ship-proxy:
+    build: ./ship-proxy
+    ports:
+      - "8080:8080"
+    depends_on:
+      - offshore-proxy
+    networks:
+      - proxy-network
