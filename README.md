@@ -1,13 +1,19 @@
-# cruise-ship-proxy
+# Proxy System
 
-This project implements a proxy system that allows all HTTP/HTTPS traffic from the Royal Caribbean cruidse ship to travel through a single persistent TCP connection to reduce costs. 
+This repository contains two interconnected proxy applications:
+- **Offshore Proxy**: Acts as a TCP proxy server
+- **Ship Proxy**: Connects to the Offshore Proxy and handles client requests
 
-The system consistes fo two components
+## Prerequisites
 
-1. **Ship Proxy (Client)** -
-Runs on the ship and accepts HTTP/HTTPS requests from users 
+- Java 11 or higher
+- Maven 3.6 or higher
+- Git (for cloning the repository)
 
-2. **Offshore Proxy (Server)** -
-Runs on land and makes actual HTTP/HTTPS requests to the internet
+## Setup & Configuration
 
+### 1. Clone the Repository
 
+```bash
+git clone <repository-url>
+cd <repository-directory>
