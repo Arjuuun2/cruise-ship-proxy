@@ -27,6 +27,9 @@ public class TCPClient {
         this.offshoreHost = offshoreHost;
         this.offshorePort = offshorePort;
         this.proxyHandler = proxyHandler;
+
+        logger.info("TCPClient created with offshoreHost={}, offshorePort={}",
+                this.offshoreHost, this.offshorePort);
     }
 
     public void connect() {
