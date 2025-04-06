@@ -3,6 +3,7 @@ package com.example.ship_proxy;
 import com.example.ship_proxy.ProxyHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -23,7 +24,11 @@ public class TCPClient {
     private final BlockingQueue<ProxyHandler.ProxyResponse> responseQueue = new LinkedBlockingQueue<>();
     private boolean connected = false;
 
-    public TCPClient(String offshoreHost, int offshorePort, ProxyHandler proxyHandler) {
+    //TODO:
+    //If Websocket is not connecting you can temporarily hardcode the connection here for testing
+
+    public TCPClient(@Value("${offshore.proxy.host}") String offshoreHost,
+                     @Value("${offshore.proxy.port}") int offshorePort, ProxyHandler proxyHandler) {
         this.offshoreHost = offshoreHost;
         this.offshorePort = offshorePort;
         this.proxyHandler = proxyHandler;
