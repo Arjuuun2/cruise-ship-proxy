@@ -35,7 +35,7 @@ public class ProxyHandler {
 
     public void start() {
         //start the client connection to offshore proxy
-        tcpClient = new com.example.ship_---------------------------------------------------------------------------------------------------------proxy.TCPClient(offshoreProxyHost, offshoreProxyPort, this);
+        tcpClient = new com.example.ship_proxy.TCPClient(offshoreProxyHost, offshoreProxyPort, this);
         tcpClient.connect();
         new Thread(this::processRequestsFromQueue).start();
         new Thread(this::handleResponses).start();
